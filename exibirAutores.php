@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
     <title>Exibir Autores</title>
 </head>
 <body>
@@ -16,7 +17,8 @@ function formatarData($data)
 session_start();
 $autores = $_SESSION['ListaAutores'];
 echo "
-        <table border=\"1\">
+    <div class=\"container\" align=\"center\">
+        <table class=\"table table-bordered table-hover\">
             <th>ID</td>
             <th>Nome</th>
             <th>E-mail</th>
@@ -29,11 +31,12 @@ foreach ($autores as $autor) {
     echo "<td>" . $autor->nome . "</td>";
     echo "<td>" . $autor->email . "</td>";
     echo "<td>" . $autor->dt_nasc . "</td>";
-    echo "<td><a href=\"controlers/controlerAutor.php?opcao=3&id=" . $autor->autor_id . "\"\>Alterar </a>";
-    echo "<a href=\"controlers/controlerAutor.php?opcao=4&id=" . $autor->autor_id . "\">Excluir </a></td>";
+    echo "<td><a href=\"controlers/controlerAutor.php?opcao=3&id=" . $autor->autor_id . "\"\><button class=\"btn btn-primary\">Excluir </button></a>";
+    echo "<a href=\"controlers/controlerAutor.php?opcao=4&id=" . $autor->autor_id . "\"><button class=\"btn btn-danger\">Editar</button></a></td>";
     echo "</tr>";
 }
-echo "</table>";
+echo "</div>
+        </table>";
 ?>
 </body>
 </html>
