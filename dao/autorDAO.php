@@ -39,4 +39,11 @@ class AutorDAO
         }
         return $lista;
     }
+    public function excluirAutor($id)
+    {
+        $sql = $this->con->prepare("DELETE FROM autores WHERE autor_id = :id");
+
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+    }
 }

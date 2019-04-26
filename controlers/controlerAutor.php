@@ -20,3 +20,9 @@ if ($opcao === 2) {
     $_SESSION['ListaAutores'] = $lista;
     header("Location:../exibirAutores.php");
 }
+if ($opcao === 4) {
+    $autorDAO = new AutorDAO();
+    $autorDAO->excluirAutor($_GET['id']);
+    header("Location:controlerAutor.php?opcao=2");
+
+}
