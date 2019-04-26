@@ -7,7 +7,6 @@
     <title>Exibir Autores</title>
 </head>
 <body>
-    <p>Autor Incluido com sucesso</p>
 
     <?php
 function formatarData($data)
@@ -25,17 +24,16 @@ echo "
             <th>Operação</th>
 ";
 foreach ($autores as $autor) {
-    echo " <tr>
-                    <td> $autor->autor_id</td>
-                    <td> $autor->nome </td>
-                    <td> $autor->email </td>
-                    <td> $autor->dt_nasc</td>
-                    <td> <a href=\"controlers/controlerAutor.php?opcao=3&id='$autor->autor_id' \">Alterar</a>
-                    &nbsp<a href=\"controlers/controlerAutor.php?opcao=4&id='$autor->autor_id' \">Excluir</a></td>
-                </tr> ";
+    echo " <tr>";
+    echo "<td>" . $autor->autor_id . "</td>";
+    echo "<td>" . $autor->nome . "</td>";
+    echo "<td>" . $autor->email . "</td>";
+    echo "<td>" . $autor->dt_nasc . "</td>";
+    echo "<td><a href=\"controlers/controlerAutor.php?opcao=3&id=" . $autor->autor_id . "\"\>Alterar </a>";
+    echo "<a href=\"controlers/controlerAutor.php?opcao=4&id=" . $autor->autor_id . "\">Excluir </a></td>";
+    echo "</tr>";
 }
 echo "</table>";
-
 ?>
 </body>
 </html>
