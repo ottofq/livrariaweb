@@ -46,4 +46,31 @@ class AutorDAO
         $sql->bindValue(':id', $id);
         $sql->execute();
     }
+
+    public function atualizarAutores(Autor $autor)
+    {
+        $sql = $this->con->prepare("UPDATE autores SET nome = :nome,email = :email,dt_nasc = :datanasc WHERE autor_id = :id");
+
+        $sql->bindValue(':id', $autor->getId());
+        $sql->bindValue(':nome', $autor->getEmail());
+        $sql->bindValue(':email', $autor->getEmail());
+        $sql->bindValue('datanasc', $autor->getDataNasc());
+
+        $sql->execute();
+
+    }
+
+    public function selecao($id)
+    {
+        $sql = $this->con->prepare('SELECT * FROM autores WHERE autor_id= :id');
+
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+        $lista = array();
+
+        while ($autor = $sql->fetch(PDO::FETCH_OBJ)) {
+            $lista[] = $autor;
+        }
+        return $lista;
+    }
 }

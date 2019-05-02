@@ -20,9 +20,23 @@ if ($opcao === 2) {
     $_SESSION['ListaAutores'] = $lista;
     header("Location:../exibirAutores.php");
 }
+
+if ($opcao === 3) {
+    $autorDAO = new AutorDAO();
+    $dados    = $autorDAO->selecao($_GET['id']);
+    session_start();
+    $_SESSION['Autor'] = $dados;
+    header("Location:../atualizarAutores.php");
+}
+
 if ($opcao === 4) {
     $autorDAO = new AutorDAO();
     $autorDAO->excluirAutor($_GET['id']);
     header("Location:controlerAutor.php?opcao=2");
 
+}
+if ($opcao === 5) {
+    $autorDAO = new AutorDAO();
+    $autorDAO->atualizarAutores(new Autor($_REQUEST['txtNomeAutor'], $_REQUEST['txtEmailAutor'], $_REQUEST['txtDataNascAutor']));
+    header("Location:../exibirAutores.php");
 }
