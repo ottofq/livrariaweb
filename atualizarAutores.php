@@ -1,42 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
-    <title>Cadastro Autor</title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css"/>
+    <title>Atualização de Autores</title>
 </head>
 <body>
 <?php
-session_start();
-$dados = $_SESSION['Autor'];
-foreach ($dados as $autor) {
-    $nome     = $autor->nome;
-    $email    = $autor->email;
-    $dataNasc = $autor->dt_nasc;
+function formatarData($data)
+{
+    return date('d/m/Y', $data);
 }
+
+session_start();
+$autor = $_SESSION['Autor'];
 ?>
 
     <div class="container">
         <form action="controlers/controlerAutor.php" method="POST">
+
             <div class="form-group">
                 <label>Nome</label>
-                <input type="text" class="form-control" <?php echo "value=\"$nome\"" ?> name="txtNomeAutor">
+                <input type="text" class="form-control" value="<?php echo $autor->nome ?>" name="txtNomeAutor">
             </div>
 
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" class="form-control" <?php echo "value=\"$email\"" ?> name="txtEmailAutor">
+                <input type="email" class="form-control" value="<?php echo $autor->email ?>" name="txtEmailAutor">
             </div>
 
             <div class="form-group">
                 <label>Data de Nascimento</label>
-                <input type="date" class="form-control" <?php echo "value=\"$dataNasc\"" ?> name="txtDataNascAutor">
+                <input type="date" class="form-control" value="<?php echo $autor->dt_nasc ?>" name="txtDataNascAutor">
             </div>
 
+            <input type="hidden" name="opcao" value="5">
+            <input type="hidden" name="idAutor" value="<?php echo $autor->autor_id ?>">
             <button type="submit" class="btn btn-primary">Atualizar</button>
-            <input type="hidden" name="opcao" value="1">
+
         </form>
     </div>
 </body>

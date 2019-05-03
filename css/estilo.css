@@ -70,3 +70,10 @@ div.barra {
   width: auto;
   background-color: #c00000;
 }
+
+.tabela td {
+  text-align: center;
+}
+.btnExcluir{
+  margin-right: 16px;
+}
