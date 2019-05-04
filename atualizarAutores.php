@@ -39,8 +39,11 @@ $autor = $_SESSION['Autor'];
             <input type="hidden" name="opcao" value="5">
             <input type="hidden" name="idAutor" value="<?php echo $autor->autor_id ?>">
             <button type="submit" class="btn btn-primary">Atualizar</button>
+            <a href="controlers/exibirAutores.php"><button class="btn btn-secondary">Voltar</button></a>
 
         </form>
     </div>
+
+
 </body>
 </html>
