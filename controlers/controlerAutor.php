@@ -18,7 +18,7 @@ if ($opcao === 2) {
     $lista    = $autorDAO->getAutores();
     session_start();
     $_SESSION['ListaAutores'] = $lista;
-    header("Location:../exibirAutores.php");
+    header("Location:../views/autor/exibirAutores.php");
 }
 
 if ($opcao === 3) {
@@ -27,7 +27,7 @@ if ($opcao === 3) {
     $autor    = $autorDAO->getAutor($id);
     session_start();
     $_SESSION['Autor'] = $autor;
-    header("Location:../atualizarAutores.php");
+    header("Location:../views/autor/atualizarAutores.php");
 }
 
 if ($opcao === 4) {

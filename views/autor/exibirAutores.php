@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" href="css/estilo.css"/>
-    <script src="css/bootstrap/js/bootstrap.js"></script>
-    <script src="test.js"></script>
+    <link rel="stylesheet" href="../../css/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../css/estilo.css"/>
+    <script src="../../css/bootstrap/js/bootstrap.js"></script>
     <title>Exibir Autores</title>
 </head>
 <body>
@@ -36,14 +35,14 @@ foreach ($autores as $autor) {
     echo "<td>" . $autor->nome . "</td>";
     echo "<td>" . $autor->email . "</td>";
     echo "<td>" . $autor->dt_nasc . "</td>";
-    echo "<td><a  href=\"controlers/controlerAutor.php?opcao=3&id=" . $autor->autor_id . "\"><button class=\"btn btn-success btnSpc\">Editar</button></a>
-    <a  href=\"controlers/controlerAutor.php?opcao=4&id=" . $autor->autor_id . "\"><button class=\"btn btn-danger\">Excluir</button></a></td>";
+    echo "<td><a  href=\"../../controlers/controlerAutor.php?opcao=3&id=" . $autor->autor_id . "\"><button class=\"btn btn-success btnSpc\">Editar</button></a>
+    <a  href=\"../../controlers/controlerAutor.php?opcao=4&id=" . $autor->autor_id . "\"><button class=\"btn btn-danger\">Excluir</button></a></td>";
     echo "</tr>";
 }
 echo "</div>
         </table>";
 ?>
-  <a href="index.html"><button class="btn btn-secondary">Voltar</button></a>
+  <a href="../../index.html"><button class="btn btn-secondary">Voltar</button></a>
 
 </body>
 </html>
