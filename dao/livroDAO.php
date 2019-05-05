@@ -60,7 +60,7 @@ class LivroDAO
 
     public function getLivro($isbn)
     {
-        $sql = $this->con->prepare('SELECT * FROM livros WHERE isbn= :isbn');
+        $sql = $this->con->prepare("SELECT * FROM livros WHERE isbn= :isbn");
 
         $sql->bindValue(':isbn', $isbn);
         $sql->execute();

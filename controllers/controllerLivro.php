@@ -22,12 +22,12 @@ if ($opcao === 2) {
 }
 
 if ($opcao === 3) {
-    $isbn     = $_REQUEST['isbn'];
+    $isbn     = (int) $_REQUEST['isbn'];
     $livroDAO = new LivroDAO();
     $livro    = $livroDAO->getLivro($isbn);
     session_start();
-    $_SESSION['Livro'] = $Livro;
-    header("Location:../atualizarLivros.php");
+    $_SESSION['Livro'] = $livro;
+    header("Location:../views/livro/atualizarLivro.php");
 }
 
 if ($opcao === 4) {
@@ -38,8 +38,8 @@ if ($opcao === 4) {
 }
 if ($opcao === 5) {
     $livroDAO = new LivroDAO();
-    $livro    = new Livro($_REQUEST['txtTituloLivro'], $_REQUEST['txtEdicaoLivro'], $_REQUEST['txtAnoLivro'], $_REQUEST['txtDescricaoLivro']);
+    $livro    = new Livro($_REQUEST['isbnLivro'], $_REQUEST['txtTituloLivro'], $_REQUEST['txtEdicaoLivro'], $_REQUEST['txtAnoLivro'], $_REQUEST['txtDescricaoLivro']);
     $livro->setIsbn($_REQUEST['isbnLivro']);
     $livroDAO->atualizarLivro($livro);
-    header("Location:controlerLivro.php?opcao=2");
+    header("Location:controllerLivro.php?opcao=2");
 }
