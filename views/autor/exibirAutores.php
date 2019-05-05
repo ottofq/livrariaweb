@@ -35,8 +35,8 @@ foreach ($autores as $autor) {
     echo "<td>" . $autor->nome . "</td>";
     echo "<td>" . $autor->email . "</td>";
     echo "<td>" . $autor->dt_nasc . "</td>";
-    echo "<td><a  href=\"../../controlers/controllerAutor.php?opcao=3&id=" . $autor->autor_id . "\"><button class=\"btn btn-success btnSpc\">Editar</button></a>
-    <a  href=\"../../controlers/controllerAutor.php?opcao=4&id=" . $autor->autor_id . "\"><button class=\"btn btn-danger\">Excluir</button></a></td>";
+    echo "<td><a  href=\"../../controllers/controllerAutor.php?opcao=3&id=" . $autor->autor_id . "\"><button class=\"btn btn-success btnSpc\">Editar</button></a>
+    <a  href=\"../../controllers/controllerAutor.php?opcao=4&id=" . $autor->autor_id . "\"><button class=\"btn btn-danger\">Excluir</button></a></td>";
     echo "</tr>";
 }
 echo "</div>

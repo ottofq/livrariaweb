@@ -11,7 +11,7 @@ if ($opcao === 1) {
 
     $autorDAO->incluirAutor($autor);
 
-    header("Location:controlerAutor.php?opcao=2");
+    header("Location:controllerAutor.php?opcao=2");
 }
 if ($opcao === 2) {
     $autorDAO = new AutorDAO();
@@ -33,7 +33,7 @@ if ($opcao === 3) {
 if ($opcao === 4) {
     $autorDAO = new AutorDAO();
     $autorDAO->excluirAutor($_REQUEST['id']);
-    header("Location:controlerAutor.php?opcao=2");
+    header("Location:controllerAutor.php?opcao=2");
 
 }
 if ($opcao === 5) {
@@ -41,5 +41,5 @@ if ($opcao === 5) {
     $autor    = new Autor($_REQUEST['txtNomeAutor'], $_REQUEST['txtEmailAutor'], $_REQUEST['txtDataNascAutor']);
     $autor->setId($_REQUEST['idAutor']);
     $autorDAO->atualizarAutores($autor);
-    header("Location:controlerAutor.php?opcao=2");
+    header("Location:controllerAutor.php?opcao=2");
 }
