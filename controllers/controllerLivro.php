@@ -17,8 +17,8 @@ if ($opcao === 2) {
     $livroDAO = new LivroDAO();
     $lista    = $livroDAO->getLivros();
     session_start();
-    $_SESSION['ListaLivro'] = $lista;
-    header("Location:../exibirLivros.php");
+    $_SESSION['ListaLivros'] = $lista;
+    header("Location:../views/livro/exibirLivros.php");
 }
 
 if ($opcao === 3) {

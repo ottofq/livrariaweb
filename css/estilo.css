@@ -77,3 +77,7 @@ div.barra {
 .btnSpc{
   margin-right: 16px;
 }
+.tabela tr td a button{
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

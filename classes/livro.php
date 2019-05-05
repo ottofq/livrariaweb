@@ -8,7 +8,7 @@ class Livro
     private $descricao;
     private $id;
 
-    public function Autor($isbn, $titulo, $edicao_num, $ano_publicacao, $descricao)
+    public function Livro($isbn, $titulo, $edicao_num, $ano_publicacao, $descricao)
     {
         $this->isbn           = $isbn;
         $this->titulo         = $titulo;
