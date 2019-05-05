@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="../../controlers/controlerAutor.php" method="POST">
+        <form action="../../controllers/controllerAutor.php" method="POST">
             <div class="form-group">
                 <label>Nome</label>
                 <input type="text" class="form-control" name="txtNomeAutor">
