@@ -11,7 +11,7 @@ if ($opcao === 1) {
 
     $livroDAO->incluirLivro($livro);
 
-    header("Location:controlerLivro.php?opcao=2");
+    header("Location:controllerLivro.php?opcao=2");
 }
 if ($opcao === 2) {
     $livroDAO = new LivroDAO();
