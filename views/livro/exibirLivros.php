@@ -34,8 +34,8 @@ foreach ($livros as $livro) {
     echo "<td>" . $livro->edicao_num . "</td>";
     echo "<td>" . $livro->ano_publicacao . "</td>";
     echo "<td>" . $livro->descricao . "</td>";
-    echo "<td><a  href=\"../../controllers/controllerLivro.php?opcao=3&id=" . $livro->isbn . "\"><button class=\"btn btn-success btnSpc\">Editar</button></a>
-    <a  href=\"../../controllers/controllerLivro.php?opcao=4&id=" . $livro->isbn . "\"><button class=\"btn btn-danger\">Excluir</button></a></td>";
+    echo "<td><a  href=\"../../controllers/controllerLivro.php?opcao=3&isbn=" . $livro->isbn . "\"><button class=\"btn btn-success btnSpc\">Editar</button></a>
+    <a  href=\"../../controllers/controllerLivro.php?opcao=4&isbn=" . $livro->isbn . "\"><button class=\"btn btn-danger\">Excluir</button></a></td>";
     echo "</tr>";
 }
 echo "</div>

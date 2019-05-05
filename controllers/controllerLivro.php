@@ -33,7 +33,7 @@ if ($opcao === 3) {
 if ($opcao === 4) {
     $livroDAO = new LivroDAO();
     $livroDAO->excluirLivro($_REQUEST['isbn']);
-    header("Location:controlerLivro.php?opcao=2");
+    header("Location:controllerLivro.php?opcao=2");
 
 }
 if ($opcao === 5) {
