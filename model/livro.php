@@ -6,7 +6,6 @@ class Livro
     private $edicao_num;
     private $ano_publicacao;
     private $descricao;
-    private $id;
 
     public function Livro($isbn, $titulo, $edicao_num, $ano_publicacao, $descricao)
     {
@@ -41,16 +40,6 @@ class Livro
     public function getDescricao()
     {
         return $this->descricao;
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     public function setIsbn($isbn)

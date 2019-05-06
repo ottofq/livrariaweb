@@ -1,5 +1,5 @@
 <?php
-require_once '../classes/autor.php';
+require_once '../model/autor.php';
 require_once 'conexao.php';
 
 class AutorDAO

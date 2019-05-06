@@ -1,5 +1,5 @@
 <?php
-require_once '../classes/livro.php';
+require_once '../model/livro.php';
 require_once 'conexao.php';
 
 class LivroDAO

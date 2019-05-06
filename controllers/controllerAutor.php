@@ -1,6 +1,6 @@
 <?php
 
-require_once '../classes/autor.php';
+require_once '../model/autor.php';
 require_once '../dao/autorDAO.php';
 
 $opcao = (int) $_REQUEST['opcao'];
