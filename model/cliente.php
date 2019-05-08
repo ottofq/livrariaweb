@@ -66,6 +66,11 @@ class Cliente
         return $this->email;
     }
 
+    public function getSenha()
+    {
+        return $this->senha;
+    }
+
     public function getRG()
     {
         return $this->rg;
