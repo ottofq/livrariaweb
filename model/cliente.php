@@ -83,7 +83,7 @@ class Cliente
 
     public function setNome($nome)
     {
-        $this->nome = nome;
+        $this->nome = $nome;
     }
 
     public function setCidade($cidade)
