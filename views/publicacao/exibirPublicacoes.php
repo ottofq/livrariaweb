@@ -34,7 +34,7 @@ foreach ($publicacoes as $pub) {
         </tr>
 
         <tr>
-            <td><a href="#"><img src="../../imagens/botao_comprar.png" alt=""></a></td>
+           <?php echo '<td><a href="../../controllers/controllerCarrinho.php?opcao=1&id=' . $pub->getId() . '"><img src="../../imagens/botao_comprar.png" alt=""></a></td> '; ?>
         </tr>
 
         </table>

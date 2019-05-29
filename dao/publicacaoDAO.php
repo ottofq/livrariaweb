@@ -56,7 +56,7 @@ class PublicacaoDAO
 
         while ($row = $rs->fetch(PDO::FETCH_OBJ)) {
             $publicacao = new Publicacao();
-            $publicacao->setId($row->publicaco_id);
+            $publicacao->setId($row->publicacao_id);
             $publicacao->setISBN($row->isbn);
             $publicacao->setTitulo($this->getTituloLivro($row->isbn));
             $publicacao->setAutor($this->getNomeAutor($row->autor_id));
@@ -70,15 +70,15 @@ class PublicacaoDAO
 
     public function getPublicacao($id)
     {
-        $rs = $this->con->prepare("SELECT * FROM publicacao WHERE publicacao_id = :id");
+        $sql = $this->con->prepare("SELECT * FROM publicacao WHERE publicacao_id = :id");
 
         $sql->bindValue(':id', $id);
         $sql->execute();
 
-        $row = $rs->fetch(PDO::FETCH_OBJ);
+        $row = $sql->fetch(PDO::FETCH_OBJ);
 
         $publicacao = new Publicacao();
-        $publicacao->setId($row->publicaco_id);
+        $publicacao->setId($row->publicacao_id);
         $publicacao->setISBN($row->isbn);
         $publicacao->setTitulo($this->getTituloLivro($row->isbn));
         $publicacao->setAutor($this->getNomeAutor($row->autor_id));
