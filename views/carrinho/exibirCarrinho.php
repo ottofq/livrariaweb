@@ -24,22 +24,32 @@ $carrinho = $_SESSION["Carrinho"];
 $cont     = 1;
 $soma     = 0;
 foreach ($carrinho as $car) {
-    echo "<tr>";
-    echo "<td>" . $cont . "</td>";
-    echo "<td>" . $car->getId() . "</td>";
-    echo "<td>" . $car->getTitulo() . "</td>";
-    echo "<td>" . $car->getEditora() . "</td>";
-    echo "<td>" . $car->getPreco() . "</td>";
-    echo '<td><a href="../../controllers/controllerCarrinho.php?opcao=2index=' . ($cont - 1) . '"><img src="../../imagens/remove.jpg"/></a></td>';
-    echo "</tr>";
-    $cont++;
-    $soma += $car->getPreco();
+    if ((!isset($_REQUEST["status"]) && $_REQUEST['status'] != 1)) {
+        echo "<tr>";
+        echo "<td>" . $cont . "</td>";
+        echo "<td>" . $car->getId() . "</td>";
+        echo "<td>" . $car->getTitulo() . "</td>";
+        echo "<td>" . $car->getEditora() . "</td>";
+        echo "<td>" . $car->getPreco() . "</td>";
+        echo '<td><a href="../../controllers/controllerCarrinho.php?opcao=2index=' . ($cont - 1) . '"><img src="../../imagens/remove.jpg"/></a></td>';
+        echo "</tr>";
+        $cont++;
+        $soma += $car->getPreco();
+    } else {
+        echo "<div>
+                <p>Carrinho Vazio!!</p>
+                <p><a href='../../controllers/controllerPublicacao.php?opcao=2'>Visualizar Publicações</a></p>
+                </div>";
+    }
 }
 ?>
     <tr align="right">
-        <td colspan="5"><?php echo $soma ?></td>
+        <td colspan="5">Valor Total:<?php echo $soma ?></td>
     </tr>
         </table>
+    </div>
+    <div>
+    <a href="../../controllers/controllerPublicacao.php?opcao=2">Continuar Comprando</a>
     </div>
 
 </body>
