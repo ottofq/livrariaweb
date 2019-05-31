@@ -23,8 +23,8 @@ session_start();
 $carrinho = $_SESSION["Carrinho"];
 $cont     = 1;
 $soma     = 0;
-foreach ($carrinho as $car) {
-    if ((!isset($_REQUEST["status"]) && $_REQUEST['status'] != 1)) {
+if (!isset($_REQUEST["status"])) {
+    foreach ($carrinho as $car) {
         echo "<tr>";
         echo "<td>" . $cont . "</td>";
         echo "<td>" . $car->getId() . "</td>";
@@ -35,21 +35,28 @@ foreach ($carrinho as $car) {
         echo "</tr>";
         $cont++;
         $soma += $car->getPreco();
-    } else {
-        echo "<div>
-                <p>Carrinho Vazio!!</p>
-                <p><a href='../../controllers/controllerPublicacao.php?opcao=2'>Visualizar Publicações</a></p>
-                </div>";
     }
+} elseif ((int) $_REQUEST["status"] === 1) {
+    echo "<div>
+            <p>Carrinho Vazio!!</p>
+            <p><a href='../../controllers/controllerPublicacao.php?opcao=2'>Visualizar Publicações</a></p>
+            </div>";
 }
 ?>
     <tr align="right">
-        <td colspan="5">Valor Total:<?php echo $soma ?></td>
+        <td colspan="5">Valor Total: R$<?php echo $soma ?></td>
     </tr>
         </table>
     </div>
+
     <div>
     <a href="../../controllers/controllerPublicacao.php?opcao=2">Continuar Comprando</a>
+    </div>
+
+    <div>
+    <a href="../compra/finalizarCompra.php?total=<?php echo $soma ?>">
+        <img src="../../imagens/finalizarCompra.png">
+    </a>
     </div>
 
 </body>

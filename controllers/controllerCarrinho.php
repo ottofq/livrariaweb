@@ -23,6 +23,7 @@ if ($opcao === 2) {
     session_start();
     $carrinho = $_SESSION["Carrinho"];
     unset($carrinho[$index]);
+    sort($carrinho);
     $_SESSION["Carrinho"] = $carrinho;
     header("Location:controllerCarrinho.php?opcao=3");
 }
