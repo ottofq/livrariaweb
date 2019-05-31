@@ -7,6 +7,11 @@
     <title>Exibir Publicaçoes</title>
 </head>
 <body>
+<div align="right">
+        <a href="../../controllers/controllerCarrinho.php?opcao=3">
+            <img src="../../imagens/meu-carrinho.png" border="0">
+        </a>
+    </div>
 <?php
 require_once '../../model/publicacao.php';
 session_start();
@@ -40,6 +45,7 @@ foreach ($publicacoes as $pub) {
         </table>
 
 <?php }?>
+
 
 </body>
 </html>
